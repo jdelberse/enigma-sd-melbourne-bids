@@ -9,11 +9,11 @@ for sub in tsv.index:
     first_ses = tsv.loc[sub]['first_session']
 
     if first_ses == "NN":
-        ses_labs = {"ses-1" : "ses-nn", "ses-2" : "ses-sd"}
+        ses_labs = {"ses-nn" : "ses-bl", "ses-sd" : "ses-sd"}
     else:
-        ses_labs = {"ses-1" : "ses-sd", "ses-2" : "ses-nn"}
+        ses_labs = {"ses-sd" : "ses-sd", "ses-nn" : "ses-bl"}
     
-    for ses in ["ses-1", "ses-2"]:
+    for ses in ["ses-nn", "ses-sd"]:
         old_scan = f"{sub}/{ses}/anat/{sub}_{ses}_T1w.nii.gz"
         new_scan = f"{sub}/{ses}/anat/{sub}_{ses_labs[ses]}_T1w.nii.gz"
         
