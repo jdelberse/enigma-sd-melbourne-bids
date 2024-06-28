@@ -25,10 +25,13 @@ for sub in tsv.index:
 	print(f"Processing {sub}")
 	pvs_path = f"derivatives/{pvs_source}/{sub}/pvs.stat.csv"
 	if os.path.exists(pvs_path):
-		print(f"PVS data found at {pvs_path}")
 		pvs = pd.read_csv(pvs_path).set_index("Session")
-		pvsvf_bl = pvs.loc[sessions[0]]['PVSVF']
-		pvsvf_sd = pvs.loc[sessions[1]]['PVSVF']
+		if sessions[0] in pvs.index:
+			print(f"PVS (baseline) data found at {pvs_path}")
+			pvsvf_bl = pvs.loc[sessions[0]]['PVSVF']
+		if sessions[1] in pvs.index:
+			print(f"PVS (SD) data found at {pvs_path}")
+			pvsvf_sd = pvs.loc[sessions[1]]['PVSVF']
 	else:
 		print("No PVS data found")
 		pvsvf_bl = "n/a"
