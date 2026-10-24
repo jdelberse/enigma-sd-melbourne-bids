@@ -19,9 +19,8 @@ This dataset contains MRI data from a sleep manipulation study conducted at the 
 
 ## Sleep protocol
 
-- **SR**: sleep restriction, 3 h time in bed (TIB)
-
-Participants were scanned under baseline and sleep manipulation conditions.
+- **BL**: baseline, habitual
+- **SR**: sleep restriction, 1 night 3h time in bed (TIB)
 
 ## Imaging data
 
